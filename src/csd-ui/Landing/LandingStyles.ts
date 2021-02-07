@@ -23,18 +23,20 @@ import {
         },
         titleContainer: {
             alignContent: 'center',
+            color: 'turquoise',
             marginLeft: 'auto',
             marginRight: 'auto',
             textAlign: 'center',
-            textShadow: '2px 2px black',
-            color: 'turquoise',
         },
         welcome: {
             marginBottom: '0em'
         },
         title: {
+            fontSize: '80px',
             marginBottom: '0em',
-            marginTop: '.05em'
+            marginTop: '.05em',
+            textShadow: '2px 6px 5px black',
+
         },
         subtitle: {
             marginTop: '.1em'
