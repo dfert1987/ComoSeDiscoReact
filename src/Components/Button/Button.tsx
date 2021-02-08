@@ -48,7 +48,9 @@ import {
 
   const PrimaryButton = styled(ButtonTemplate)({
     backgroundColor: PRIMARY_COLOR,
+    border: `2px solid ${SNOW}`,
     color: SNOW,
+    fontWeight: 900,
   });
   
   const SecondaryButton = styled(ButtonTemplate)({
@@ -63,6 +65,7 @@ import {
   
   const WarningButton = styled(ButtonTemplate)({
     backgroundColor: WARNING_COLOR,
+    border: `2px solid ${SNOW}`,
     color: WARNING_TEXT,
     fontWeight: 900,
   });
