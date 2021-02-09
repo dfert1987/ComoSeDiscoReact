@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../../Components';
-import LoginIcon from './LoginIcon.jpeg'
+import input from '@material-ui/core';
+import LoginIcon from './LoginIcon.jpeg';
 import { useStyles } from './LandingStyles';
 import { HOME_ROUTE } from '../Constants/src/index';
 
@@ -28,14 +29,10 @@ export const LoginPage = ({ id, setDisplay }: Props) => {
                 </div>
                 <form id={`${id}-form`} className={classes.loginForm}>
                     <div className={classes.loginButtonContainer}>
-                        <Button 
-                            id={`${id}-enter`}
-                            className={classes.guestEnterButton}
-                            text="Enter as Guest"
-                            href={HOME_ROUTE}
-                            theme="primary"
-                            type="button"
-                        />
+                        <div className={classes.loginInputContainer}>
+                            <input>
+                            </input>
+                        </div>
                         <Button
                             id={`${id}-login`}
                             className={classes.loginButton}
@@ -44,8 +41,15 @@ export const LoginPage = ({ id, setDisplay }: Props) => {
                             theme="primary"
                             type="button"
                         />
+                        <Button 
+                            id={`${id}-enter`}
+                            className={classes.guestEnterButton}
+                            text="Enter as Guest"
+                            href={HOME_ROUTE}
+                            theme="primary"
+                            type="button"
+                        />
                     </div>
-
                 </form>
             </div>
         </div>
