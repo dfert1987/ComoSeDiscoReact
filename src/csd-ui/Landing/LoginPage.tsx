@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Button } from '../../Components';
+import {TextField} from '@material-ui/core';
 import input from '@material-ui/core';
 import LoginIcon from './LoginIcon.jpeg';
 import { useStyles } from './LandingStyles';
-import { HOME_ROUTE } from '../Constants/src/index';
+import { BLACK, HOME_ROUTE } from '../Constants/src/index';
 
 
 type Props = {
@@ -12,11 +13,23 @@ type Props = {
 };
 
 const login = () => {
-    console.log('logged in')
+    console.log('logged in') 
 }
 
 export const LoginPage = ({ id, setDisplay }: Props) => {
     const classes = useStyles();
+      const [username, setUsername] = useState('');
+      const [password, setPassword] = useState('');
+
+    const updateField = useCallback(
+    (field: string, value: string) => {
+      if (field === "username") {
+        setUsername(value);
+      }
+    },
+    [setUsername],
+  );
+
     return (
         <div className={classes.loginContainer} id={`${id}-container`}>
             <div className={classes.panelContainer}>
@@ -30,8 +43,14 @@ export const LoginPage = ({ id, setDisplay }: Props) => {
                 <form id={`${id}-form`} className={classes.loginForm}>
                     <div className={classes.loginButtonContainer}>
                         <div className={classes.loginInputContainer}>
-                            <input>
-                            </input>
+                            <TextField
+                                className={classes.userInput}
+                                label="Username"
+                                id={`${id}-username`}
+                                variant="outlined"
+                                value= {username as string}
+                                onChange={(e) => updateField("username", e.target.value)}
+                            />
                         </div>
                         <Button
                             id={`${id}-login`}
