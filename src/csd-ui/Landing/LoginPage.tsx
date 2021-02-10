@@ -4,7 +4,7 @@ import {TextField} from '@material-ui/core';
 import input from '@material-ui/core';
 import LoginIcon from './LoginIcon.jpeg';
 import { useStyles } from './LandingStyles';
-import { BLACK, HOME_ROUTE } from '../Constants/src/index';
+import { BLACK, HOME_ROUTE, SECONDARY } from '../Constants/src/index';
 
 
 type Props = {
@@ -26,8 +26,11 @@ export const LoginPage = ({ id, setDisplay }: Props) => {
       if (field === "username") {
         setUsername(value);
       }
+      if (field === "password") {
+        setPassword(value);
+      }
     },
-    [setUsername],
+    [setUsername, password],
   );
 
     return (
@@ -35,21 +38,31 @@ export const LoginPage = ({ id, setDisplay }: Props) => {
             <div className={classes.panelContainer}>
                 <h3 className={classes.panelText}>¿Como Se Disco?</h3>
             </div>
-            <div className={classes.loginFormContainer}>
-                <div className={classes.loginHeader}>
+            <div className={classes.main}>
+            <div className={classes.loginHeader}>
                     {/* <img src={LoginIcon} alt='login-icon' className={classes.loginIcon}/> */}
                     <h2 className={classes.loginTitle}>Login</h2>
                 </div>
+            <div className={classes.loginFormContainer}>
                 <form id={`${id}-form`} className={classes.loginForm}>
                     <div className={classes.loginButtonContainer}>
                         <div className={classes.loginInputContainer}>
+                            <label className={classes.usernameLabel}>USERNAME</label>
                             <TextField
                                 className={classes.userInput}
-                                label="Username"
                                 id={`${id}-username`}
                                 variant="outlined"
                                 value= {username as string}
                                 onChange={(e) => updateField("username", e.target.value)}
+                            />
+                             <label className={classes.usernameLabel}>PASSWORD</label>
+                            <TextField
+                                className={classes.userPassword}
+                                id={`${id}-password`}
+                                type="password"
+                                variant="outlined"
+                                value= {password as string}
+                                onChange={(e) => updateField("password", e.target.value)}
                             />
                         </div>
                         <Button
@@ -70,6 +83,7 @@ export const LoginPage = ({ id, setDisplay }: Props) => {
                         />
                     </div>
                 </form>
+                </div>
             </div>
         </div>
     );
