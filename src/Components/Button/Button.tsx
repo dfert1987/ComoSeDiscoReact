@@ -3,11 +3,12 @@ import {
     DEFAULT,
     ERROR,
     WARNING,
+    BLACK,
     CLEAR,
     WARNING_COLOR,
     ERROR_COLOR,
     CLEAR_BUTTON_COLOR,
-    CLEAR_BUTTON_BG_COLOR,
+    // CLEAR_BUTTON_BG_COLOR,
     WARNING_TEXT,
     SNOW,
     PRIMARY_COLOR,
@@ -48,7 +49,7 @@ import {
 
   const PrimaryButton = styled(ButtonTemplate)({
     backgroundColor: PRIMARY_COLOR,
-    border: `2px solid ${SNOW}`,
+    border: `2px solid ${BLACK}`,
     color: SNOW,
     fontWeight: 900,
   });
@@ -65,13 +66,13 @@ import {
   
   const WarningButton = styled(ButtonTemplate)({
     backgroundColor: WARNING_COLOR,
-    border: `2px solid ${SNOW}`,
+    border: `2px solid ${BLACK}`,
     color: WARNING_TEXT,
     fontWeight: 900,
   });
   
   const ClearButton = styled(ButtonTemplate)({
-    backgroundColor: CLEAR_BUTTON_BG_COLOR,
+    backgroundColor: "transparent",
     color: CLEAR_BUTTON_COLOR,
   });
   

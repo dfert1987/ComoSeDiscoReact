@@ -4,8 +4,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import { BLACK } from '../../csd-ui/Constants/src';
 
 const useStyles = makeStyles({
+    
   main: {
     margin: '5px',
+  },
+  border: {
+    width: '5px',
+  },
+  input: {
+      borderWidth: '5px',
   },
   inputLabel: {
     color: BLACK,

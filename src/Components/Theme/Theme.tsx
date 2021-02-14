@@ -30,6 +30,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
     }
 
     const csdTheme: Theme = createMuiTheme({
+
         palette: {
             primary: {
                 main: PRIMARY_COLOR,

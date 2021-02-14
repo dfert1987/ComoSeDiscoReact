@@ -61,12 +61,21 @@ export const useStyles = makeStyles(() =>
       justifyContent: "center",
       marginLeft: "auto",
       marginRight: "auto",
+      paddingBottom: "1em",
     },
     enterButton: {
+      fontSize: "40px",
+
+      height: "2em",
       margin: ".5em",
+      width: "6em",
     },
     LoginButton: {
+      fontSize: "40px",
+      height: "2em",
+      padding: ".5em",
       margin: ".5em",
+      width: "6em",
     },
     loginContainer: {
       backgroundColor: SNOW,
@@ -135,15 +144,23 @@ export const useStyles = makeStyles(() =>
     loginInputContainer: {
       display: "flex",
       flexDirection: "column",
+      justifyContent: "center",
       marginLeft: "8px",
       marginRight: "auto",
-      justifyContent: "center",
+      marginTop: "3em",
     },
     loginForm: {
-      with: "100%",
+      width: "100%",
     },
     userInput: {
-      paddingBottom: ".8em",
+      borderColor: "black",
+      borderRadius: "6px",
+      borderWidth: "2px",
+      fontFamily: CUPRUM,
+      fontSize: "15px",
+      height: "2.75em",
+      marginBottom: "1em",
+      paddingLeft: ".5em",
       width: "90%",
     },
     usernameLabel: {
@@ -153,14 +170,42 @@ export const useStyles = makeStyles(() =>
       textAlign: "left",
     },
     main: {
+      backgroundImage: "url(https://i.imgur.com/E1GpT7H.png)",
+
       width: "100%",
     },
     userPassword: {
+      borderColor: "black",
+      borderRadius: "6px",
+      borderWidth: "2px",
+      fontSize: "15px",
+      height: "2.75em",
       marginBottom: ".8em",
+      paddingLeft: ".5em",
       width: "90%",
     },
+    logoImage: {
+      height: "400px",
+    },
+    bottomRow: {
+      flexDirection: "row",
+      marginTop: "4em",
+      paddingLeft: ".5em",
+    },
+    forgotButton: {
+      backgroundColor: "transparent",
+      color: BLACK,
+      fontSize: "20px",
+      "&:hover": {
+        color: PRIMARY_COLOR,
+        backgroundColor: "transparent",
+      },
+    },
+    contactLink: {
+      marginLeft: "12em",
+    },
     // loginIcon: {
-
+    //   height: "1em",
     // },
   })
 );

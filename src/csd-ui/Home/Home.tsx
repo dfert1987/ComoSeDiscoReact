@@ -1,9 +1,11 @@
 import React, {} from 'react';
+import { Nav } from '../../Components/Nav';
+
 
 export const Home = () => {
     return(
-        <div>
-            <span>HOME</span>
+         <div>
+            <Nav id={'nav'} navItems={'navItems'}/>
         </div>
     );
 };

@@ -1,8 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { Button } from '../../Components';
-import {TextField} from '@material-ui/core';
-import input from '@material-ui/core';
-import LoginIcon from './LoginIcon.jpeg';
+// import LoginIcon from './LoginIcon.jpeg';
 import { useStyles } from './LandingStyles';
 import { BLACK, HOME_ROUTE, SECONDARY } from '../Constants/src/index';
 
@@ -15,6 +13,10 @@ type Props = {
 const login = () => {
     console.log('logged in') 
 }
+
+const forgot = () => [
+    console.log('forgot password')
+]
 
 export const LoginPage = ({ id, setDisplay }: Props) => {
     const classes = useStyles();
@@ -48,19 +50,18 @@ export const LoginPage = ({ id, setDisplay }: Props) => {
                     <div className={classes.loginButtonContainer}>
                         <div className={classes.loginInputContainer}>
                             <label className={classes.usernameLabel}>USERNAME</label>
-                            <TextField
+                            <input
                                 className={classes.userInput}
                                 id={`${id}-username`}
-                                variant="outlined"
+                                type="text"
                                 value= {username as string}
                                 onChange={(e) => updateField("username", e.target.value)}
                             />
                              <label className={classes.usernameLabel}>PASSWORD</label>
-                            <TextField
+                            <input
                                 className={classes.userPassword}
                                 id={`${id}-password`}
                                 type="password"
-                                variant="outlined"
                                 value= {password as string}
                                 onChange={(e) => updateField("password", e.target.value)}
                             />
@@ -83,6 +84,17 @@ export const LoginPage = ({ id, setDisplay }: Props) => {
                         />
                     </div>
                 </form>
+                <div className={classes.bottomRow}>
+                    <Button
+                        id={`${id}-forgotPassword`}
+                        className={classes.forgotButton}
+                        text="Forgot Password?"
+                        onClick={forgot}
+                        theme="clear"
+                        type="button"
+                    />
+                    <span className={classes.contactLink}>Contact CSD</span>
+                </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../../Components';
 import { useStyles } from './LandingStyles';
+import logo from './Untitled-2.png'
 import { HOME_ROUTE } from '../Constants/src/index';
 
 
@@ -16,6 +17,11 @@ export const LandingPage = ({ id, setDisplay }: Props) => {
             <div className={classes.titleContainer}>
                 <h4 className={classes.welcome}>Welcome to</h4>
                 <h1 className={classes.title}>¿Como Se Disco?</h1>
+                <img 
+                    className={classes.logoImage}
+                    src={logo} 
+                    alt="logo"
+                />
                 <h3 className={classes.subtitle}>Boogie Without Borders</h3>
             </div>
             <div className={classes.buttonContainer}>
