@@ -12,35 +12,57 @@ type Props = {
 
 const id ='nav'
 export const Nav: FC<Props> = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorElBlog, setAnchorElBlog] = useState(null);
+    const [anchorElRegion, setAnchorElRegion] = useState(null);
+
     const classes = useStyles();
 
     const handleClick = (event: { currentTarget: React.SetStateAction<null>; }) => {
-        setAnchorEl(event.currentTarget);
+        setAnchorElBlog(event.currentTarget);
     };
 
     const handleClose = () => {
-        setAnchorEl(null);
+        setAnchorElBlog(null);
     };
 
     return (
             <div className={classes.navContainer}>
                 <ul className={classes.navItems}>
                     <li>
-                        <a 
-                            id={`${id}-home`} 
-                            className={classes.hoverable}
-                        >
-                        Home
-                        </a>
+                         <Button 
+                                className={classes.homeButton}
+                                id={`${id}-Home`}
+                                text="Home"
+                                theme="clear"
+                                type="button"
+                                onClick={handleClick}
+                            />
                     </li>
                     <li>
-                        <a 
-                            id={`${id}-regions`} 
-                            className={classes.hoverable}
-                        >
-                        Regions
-                        </a>
+                         <Button 
+                                className={classes.regionButton}
+                                id={`${id}-regions`}
+                                text="Regions"
+                                theme="clear"
+                                type="button"
+                                onClick={handleClick}
+                            />
+                            <Menu
+                                id={`${id}-region-menu`}
+                                anchorEl={anchorElRegion}
+                                keepMounted
+                                open={Boolean(anchorElRegion)}
+                                onClose={handleClose}
+                            >
+                                <MenuItem>All</MenuItem>
+                                <MenuItem>Western Africa</MenuItem>
+                                <MenuItem>Southern Africa</MenuItem>
+                                <MenuItem>Northern Africa</MenuItem>
+                                <MenuItem>South America</MenuItem>
+                                <MenuItem>Latin America / Caribbean</MenuItem>
+                                <MenuItem>Asia</MenuItem>
+                                <MenuItem>Europe</MenuItem>
+                            </Menu>
                     </li>
                     <li>
                         <div 
@@ -57,18 +79,28 @@ export const Nav: FC<Props> = () => {
                             />
                             <Menu
                                 id={`${id}-blog-menu`}
-                                anchorEl={anchorEl}
+                                anchorEl={anchorElBlog}
                                 keepMounted
-                                open={Boolean(anchorEl)}
+                                open={Boolean(anchorElBlog)}
                                 onClose={handleClose}
                             >
+                                <MenuItem>All</MenuItem>
                                 <MenuItem>Reviews</MenuItem>
                                 <MenuItem>Mixes</MenuItem>
                                 <MenuItem>Tracks</MenuItem>
                             </Menu>
                         </div>
                     </li>
-
+                    <li>
+                        <Button 
+                            className={classes.aboutButton}
+                            id={`${id}-About`}
+                            text="About"
+                            theme="clear"
+                            type="button"
+                            onClick={handleClick}
+                        />
+                    </li>
                 </ul>
             </div>
         );
