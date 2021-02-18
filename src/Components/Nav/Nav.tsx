@@ -15,7 +15,6 @@ const id ='nav'
 export const Nav: FC<Props> = () => {
     const [anchorElBlog, setAnchorElBlog] = useState(null);
     const [anchorElRegion, setAnchorElRegion] = useState(null);
-
     const classes = useStyles();
 
     const handleClickBlog = (event: { currentTarget: React.SetStateAction<null>; }) => {
@@ -28,10 +27,12 @@ export const Nav: FC<Props> = () => {
 
     const handleClose = () => {
         setAnchorElBlog(null);
+        setAnchorElRegion(null);
     };
 
     return (
             <div className={classes.navContainer}>
+                <h1 className={classes.bannerTitle}>¿Como Se Disco?</h1>
                 <div className={classes.navItems}>
                 <ul className={classes.navItems}>
                     <li className={classes.item}>
