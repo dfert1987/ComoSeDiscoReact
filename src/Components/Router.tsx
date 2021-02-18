@@ -1,6 +1,6 @@
 import React from 'react';
 import {  Route, Switch } from 'react-router-dom';
-import { Landing, Home } from '../csd-ui';
+import { Landing, Home, About } from '../csd-ui';
 
 export const Router = () => {
 
@@ -10,6 +10,7 @@ export const Router = () => {
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/Home" component={Home} />
+          <Route exact path="/About" component={About} />
         </Switch>
       </div>
     );

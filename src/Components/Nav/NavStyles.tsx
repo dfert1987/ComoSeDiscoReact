@@ -1,15 +1,5 @@
 import { createStyles, makeStyles } from "@material-ui/core";
-
-import {
-//   BLACK,
-//   SNOW,
-//   BEBAS,
-//   CUPRUM,
-//   PRIMARY_COLOR,
-//   WARNING_COLOR,
-//   HOVER_WARNING,
-} from '../../../src/Components';
-import { BEBAS } from "../../csd-ui/Constants/src";
+import { BEBAS, PRIMARY_COLOR } from "../../csd-ui/Constants/src";
 
 export const useStyles = makeStyles(() => 
     createStyles({
@@ -21,7 +11,15 @@ export const useStyles = makeStyles(() =>
          display: 'flex',
          flexDirection: 'row',
          fontFamily: BEBAS,
-         fontSize: '20px',
+         fontSize: '30px',
+         listStyleType: 'none',
+         marginLeft: 'auto',
+         marginRight: 'auto',
+         paddingLeft: '0em'
+        },
+        item: {
+            marginLeft: '1em',
+            marginRight: '1em',
         },
         hoverable: {
             padding: '1em',
@@ -30,17 +28,32 @@ export const useStyles = makeStyles(() =>
 
         },
         blogButton: {
-
+            fontSize: '30px',
+            "&:hover": {
+            color: PRIMARY_COLOR,
+            backgroundColor: "transparent",
+            }    
         },
         homeButton: {
-
+            fontSize: '30px',
+            "&:hover": {
+            color: PRIMARY_COLOR,
+            backgroundColor: "transparent",
+            }   
         },
         regionButton: {
-
+            fontSize: '30px',
+            "&:hover": {
+            color: PRIMARY_COLOR,
+            backgroundColor: "transparent",
+            }   
         },
         aboutButton: {
-
-        },
+            fontSize: '30px',
+            "&:hover": {
+            color: PRIMARY_COLOR,
+            backgroundColor: "transparent",
+            }   
+        }
     })
-)
-
+);

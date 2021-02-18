@@ -4,6 +4,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { Button } from '../Button';
 import { useStyles } from './NavStyles';
+import { HOME_ROUTE, ABOUT_ROUTE } from '../../csd-ui/Constants/src';
 
 type Props = {
   id: string;
@@ -17,8 +18,12 @@ export const Nav: FC<Props> = () => {
 
     const classes = useStyles();
 
-    const handleClick = (event: { currentTarget: React.SetStateAction<null>; }) => {
+    const handleClickBlog = (event: { currentTarget: React.SetStateAction<null>; }) => {
         setAnchorElBlog(event.currentTarget);
+    };
+
+    const handleClickRegion = (event: { currentTarget: React.SetStateAction<null>; }) => {
+        setAnchorElRegion(event.currentTarget);
     };
 
     const handleClose = () => {
@@ -27,25 +32,26 @@ export const Nav: FC<Props> = () => {
 
     return (
             <div className={classes.navContainer}>
+                <div className={classes.navItems}>
                 <ul className={classes.navItems}>
-                    <li>
+                    <li className={classes.item}>
                          <Button 
                                 className={classes.homeButton}
                                 id={`${id}-Home`}
                                 text="Home"
                                 theme="clear"
                                 type="button"
-                                onClick={handleClick}
+                                href={HOME_ROUTE} 
                             />
                     </li>
-                    <li>
+                    <li className={classes.item}>
                          <Button 
                                 className={classes.regionButton}
                                 id={`${id}-regions`}
                                 text="Regions"
                                 theme="clear"
                                 type="button"
-                                onClick={handleClick}
+                                onClick={handleClickRegion}
                             />
                             <Menu
                                 id={`${id}-region-menu`}
@@ -64,7 +70,7 @@ export const Nav: FC<Props> = () => {
                                 <MenuItem>Europe</MenuItem>
                             </Menu>
                     </li>
-                    <li>
+                    <li className={classes.item}>
                         <div 
                             id={`${id}-blog`}
                             className={classes.dropdown}
@@ -75,7 +81,7 @@ export const Nav: FC<Props> = () => {
                                 text="Blog"
                                 theme="clear"
                                 type="button"
-                                onClick={handleClick}
+                                onClick={handleClickBlog}
                             />
                             <Menu
                                 id={`${id}-blog-menu`}
@@ -91,17 +97,18 @@ export const Nav: FC<Props> = () => {
                             </Menu>
                         </div>
                     </li>
-                    <li>
+                    <li >
                         <Button 
                             className={classes.aboutButton}
                             id={`${id}-About`}
                             text="About"
                             theme="clear"
                             type="button"
-                            onClick={handleClick}
+                            href={ABOUT_ROUTE} 
                         />
                     </li>
                 </ul>
+                </div>
             </div>
         );
     }
